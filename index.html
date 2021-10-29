@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript || jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        li h2 {
+            cursor: pointer;
+        }
+
+
+        p {
+            display: none;
+        }
+
+        span {
+            color: #000;
+        }
+
+        input {
+            display: block;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <input type="password" id="inp" placeholder="password"><button onclick="hideShow()" id="hideShow">Show</button>
+
+
+    <script>
+
+        // hideshow by javascript
+
+        function hideShow() {
+            var inputBox = document.getElementById('inp');
+            var hideShow_btn = document.getElementById('hideShow');
+
+            if (inputBox.type == "password") {
+                inputBox.type = "text";
+                hideShow_btn.innerText = "Hide"
+            } else {
+                inputBox.type = "password";
+                hideShow_btn.innerText = "Show"
+            }
+        }
+
+
+
+
+        // accordian by jquery
+
+        $('h2').click(function () {
+            $('p').slideUp();
+            $(this).next('p').slideDown();
+        })
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
